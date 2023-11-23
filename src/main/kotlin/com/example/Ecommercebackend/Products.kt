@@ -2,7 +2,6 @@ package com.example.Ecommercebackend
 
 import jakarta.persistence.*
 import java.util.*
-import jakarta.validation.constraints.NotBlank
 
 @Entity
 @Table(name = "products")
@@ -31,6 +30,10 @@ class Products {
     @Column(name = "weight")
     @NotBlank
     private val weight: Double? = null
+
+    @Column(name = "size", nullable = false)
+    @NotBlank
+    private val size: String? = null
 
     @Column(name = "stock_quantity", nullable = false)
     private val stock_quantity: Int? = null
