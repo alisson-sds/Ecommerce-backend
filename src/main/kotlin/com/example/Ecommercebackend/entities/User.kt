@@ -1,4 +1,4 @@
-package com.example.entities
+package com.example.Ecommercebackend.entities
 
 import jakarta.persistence.*
 import jakarta.validation.constraints.NotBlank

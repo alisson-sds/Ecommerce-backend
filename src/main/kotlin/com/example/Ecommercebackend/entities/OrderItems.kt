@@ -1,4 +1,4 @@
-package com.example.entities
+package com.example.Ecommercebackend.entities
 
 import com.example.Ecommercebackend.Products
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
@@ -8,8 +8,8 @@ import jakarta.validation.constraints.Size
 import java.util.*
 
 @Entity
-@Table(name = "carts_items")
-class CartItems {
+@Table(name = "orders_items")
+class OrderItems {
 
     @Id
     @Column(name = "id")
@@ -19,7 +19,7 @@ class CartItems {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties("hibernateLazyInitializer", "handler")
     @JoinColumn(name = "id")
-    private val cart: Carts? = null
+    private val order: Orders? = null
 
     @OneToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties("hibernateLazyInitializer", "handler")
@@ -30,5 +30,14 @@ class CartItems {
     @NotBlank
     @Size(min = 1, max = 4)
     private val quantity: Int? = null
+
+    @Column(name = "unit_price", nullable = false)
+    @NotBlank
+    private val unitPrice: Double? = null
+
+    @Column(name = "subtotal", nullable = false)
+    @NotBlank
+    private val subtotal: Double? = null
+
 
 }

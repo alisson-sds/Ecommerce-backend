@@ -1,4 +1,4 @@
-package com.example.entities
+package com.example.Ecommercebackend.entities
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import jakarta.persistence.*
